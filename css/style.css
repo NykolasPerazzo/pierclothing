@@ -1,0 +1,600 @@
+/* ====================================
+   RESET
+==================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #050505;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* ====================================
+   VARIABLES
+==================================== */
+
+:root {
+  --black: #050505;
+  --black-light: #111111;
+  --black-card: #151515;
+
+  --white: #ffffff;
+
+  --beige: #d9c2a0;
+  --beige-dark: #c9b18e;
+
+  --border: #242424;
+
+  --transition: 0.35s ease;
+
+  --radius: 14px;
+
+  --container: 1400px;
+}
+
+/* ====================================
+   HEADER
+==================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 999;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header__container {
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+}
+
+.logo img {
+  width: 60px;
+}
+
+.menu-btn i,
+.header__actions i {
+  font-size: 1.5rem;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+
+  top: -6px;
+  right: -8px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: var(--beige);
+  color: #000;
+
+  font-size: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+}
+
+/* ====================================
+   TOPBAR
+==================================== */
+
+.topbar {
+  margin-top: 75px;
+
+  background: var(--beige);
+
+  color: #111;
+
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  text-align: center;
+
+  padding: 0 15px;
+}
+
+/* ====================================
+   HERO
+==================================== */
+
+.hero {
+  position: relative;
+
+  min-height: 95vh;
+
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.92));
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  padding: 90px 24px 50px;
+}
+
+.hero__subtitle {
+  color: var(--beige);
+
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.hero__title {
+  margin-top: 12px;
+
+  font-size: 3rem;
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.hero__title span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px white;
+}
+
+.hero__text {
+  margin-top: 25px;
+
+  color: #d4d4d4;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+.hero__buttons {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+/* ====================================
+   BUTTONS
+==================================== */
+
+.btn {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--beige);
+
+  color: #111;
+}
+
+.btn-primary:hover {
+  background: var(--beige-dark);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+  background: white;
+  color: black;
+}
+
+/* ====================================
+   BENEFITS
+==================================== */
+
+.benefits {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+
+  padding: 35px 20px;
+
+  background: #080808;
+}
+
+.benefit {
+  text-align: center;
+
+  padding: 15px;
+}
+
+.benefit i {
+  color: var(--beige);
+
+  font-size: 2rem;
+
+  margin-bottom: 12px;
+}
+
+.benefit span {
+  display: block;
+
+  font-size: 0.85rem;
+
+  line-height: 1.5;
+}
+
+/* ====================================
+   SECTION TITLE
+==================================== */
+
+.collections {
+  padding: 60px 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 30px;
+}
+
+.section-tag {
+  color: var(--beige);
+
+  font-size: 0.8rem;
+
+  letter-spacing: 2px;
+}
+
+.section-header h2 {
+  margin-top: 10px;
+
+  font-size: 2rem;
+
+  line-height: 1.1;
+}
+
+.section-header a {
+  color: var(--beige);
+
+  font-size: 0.9rem;
+}
+
+/* ====================================
+   COLLECTIONS
+==================================== */
+
+.collections-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+.collection-card {
+  position: relative;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.collection-card img {
+  height: 250px;
+
+  object-fit: cover;
+}
+
+.collection-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+
+.collection-card span {
+  position: absolute;
+
+  bottom: 20px;
+  left: 20px;
+
+  font-weight: 800;
+
+  z-index: 2;
+}
+
+/* ====================================
+   CUPOM
+==================================== */
+
+.coupon {
+  margin: 20px;
+
+  padding: 20px;
+
+  background: #0d0d0d;
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+}
+
+.coupon__info {
+  display: flex;
+  gap: 15px;
+
+  align-items: center;
+}
+
+.coupon__info i {
+  color: var(--beige);
+
+  font-size: 2rem;
+}
+
+.coupon__info strong {
+  display: block;
+}
+
+.coupon__info span {
+  color: var(--beige);
+}
+
+.coupon__button {
+  margin-top: 20px;
+
+  height: 55px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--beige);
+
+  color: black;
+
+  font-weight: 700;
+}
+
+/* ====================================
+   NEWSLETTER
+==================================== */
+
+.newsletter {
+  padding: 50px 20px 80px;
+}
+
+.newsletter__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.newsletter__title i {
+  font-size: 1.5rem;
+
+  color: var(--beige);
+}
+
+.newsletter__form {
+  display: flex;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+.newsletter__form input {
+  flex: 1;
+
+  padding: 18px;
+
+  color: white;
+}
+
+.newsletter__form button {
+  width: 70px;
+
+  background: var(--beige);
+
+  color: black;
+
+  font-size: 1.2rem;
+}
+
+/* ====================================
+   MOBILE MENU
+==================================== */
+
+.mobile-menu {
+  position: fixed;
+
+  top: 0;
+  left: -100%;
+
+  width: 85%;
+  max-width: 320px;
+
+  height: 100vh;
+
+  background: #0a0a0a;
+
+  z-index: 1000;
+
+  transition: 0.4s;
+
+  padding: 30px;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu__header img {
+  width: 120px;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 50px;
+}
+
+.mobile-menu__nav a {
+  padding: 18px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+/* ====================================
+   TABLET
+==================================== */
+
+@media (min-width: 768px) {
+  .hero__content {
+    max-width: 650px;
+
+    padding: 120px 50px;
+  }
+
+  .hero__title {
+    font-size: 5rem;
+  }
+
+  .collections-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .collection-card img {
+    height: 320px;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ====================================
+   DESKTOP PREPARADO
+==================================== */
+
+@media (min-width: 1200px) {
+  body {
+    max-width: 1920px;
+    margin: auto;
+  }
+}
